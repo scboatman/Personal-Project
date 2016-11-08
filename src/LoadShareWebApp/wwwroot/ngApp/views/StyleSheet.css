@@ -1,0 +1,13 @@
+﻿body {
+    background-color: oldlace;
+    background: url('../../images/loadshare (2).png');
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+ }
+
+#wrapper {
+width:1000px;
+margin:0 auto;
+background-color:#FFF
+}
+#banner img{width:100%}
