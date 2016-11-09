@@ -2,7 +2,23 @@ namespace LoadShareWebApp.Controllers {
 
     export class HomeController {
         public message = "Hello from the home page!";
-        //Example: LOGIC TO INPUT information from home page ng-submit
+        
+    }
+    export class LoadController {
+
+    }
+    
+  
+    
+
+
+
+    
+
+}
+
+
+//Example: LOGIC TO INPUT information from home page ng-submit
 
         //private ProductResource;
         //public products;
@@ -25,17 +41,3 @@ namespace LoadShareWebApp.Controllers {
         //    this.ProductResource = $resource('/api/products');
         //    this.getProducts();
         //}
-    }
-    export class TruckController {
-        public message = "Hello from the Drivers page!";
-    }
-    export class LoadController {
-        public message = "Hello from the Loads page!";
-    }
-    
-
-
-
-    
-
-}

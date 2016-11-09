@@ -2,3 +2,25 @@
 <p>
     {{c.message}}
 </p>
+<!--//1st attempt to add dropdown-->
+
+<div class="btn-group">
+<a href="#" class="btn btn-primary">Primary</a>
+<a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+<ul class="dropdown-menu">
+    <li ng-repeat="trucks in c.trucks">{{trucks.origin}} - {{trucks.destination}}</li>
+    <li ng-repeat="trucks in c.trucks">{{trucks.origin}} - {{trucks.destination}}</li>
+    <li><a href="#">Something else here</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+</ul>
+</div>
+
+
+      
+        
+
+
+
+
+

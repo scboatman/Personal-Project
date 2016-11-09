@@ -15,6 +15,9 @@ namespace LoadShareWebApp.Controllers
         static List<Truck> _trucks = new List<Truck>
         {
             new Truck {Id = 1, Origin = "Chicago", OriginState = "IL", Destination = "Tuscon", DestinationState = "AZ", TrailerType = "R", ShipDate = "Dec 12", Company = "Boatman Trucking"},
+            new Truck {Id = 2, Origin = "Pheonix", OriginState = "AZ", Destination = "Chicago", DestinationState = "IL", TrailerType = "V", ShipDate = "Dec 12", Company = "Boatman Trucking"},
+            new Truck {Id = 3, Origin = "Los Angeles", OriginState = "CA", Destination = "Chicago", DestinationState = "IL", TrailerType = "R", ShipDate = "Dec 12", Company = "Boatman Trucking"}
+
         };
         // GET: api/values
         [HttpGet]
