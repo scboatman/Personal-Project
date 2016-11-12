@@ -1,23 +1,24 @@
-﻿namespace LoadShareWebApp.Controller{
+﻿namespace LoadShareWebApp.Controllers{
 
     export class LoadController {
+        public message = "Hello from the Load page!"
         private LoadResource;
-        public Truck;
-        public trucks;
+        public Load;
+        public loads;
 
-        public getTrucks() {
-            this.trucks = this.LoadResource.query();
+        public getLoads() {
+            this.loads = this.LoadResource.query()
         }
-        public save() {
-            this.LoadResource.save(this.Truck).$promise.then(() => {
-                this.Truck = null;
-                this.getTrucks();
-            });
-        }
+        //public save() {
+        //    this.LoadResource.save(this.Load).$promise.then(() => {
+        //        this.Load = null;
+        //        this.getLoads();
+        //    });
+        //}
 
         constructor(private $resource: angular.resource.IResourceService) {
-            this.LoadResource = $resource('/api/trucks/:id');
-            this.getTrucks();
+            this.LoadResource = $resource('/api/loads/');
+            this.getLoads();
         }
     }
 }

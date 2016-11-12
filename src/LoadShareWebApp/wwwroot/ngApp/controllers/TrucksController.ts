@@ -8,22 +8,20 @@
         public trucks;
 
         public getTrucks() {
-            this.trucks = this.TruckResource.query();
+            this.trucks = this.TruckResource.query()
         }
-        public save() {
-            this.TruckResource.save(this.Truck).$promise.then(() => {
-                this.Truck = null;
-                this.getTrucks();
-            });
-        }
+        //public save() {
+        //    this.TruckResource.save(this.Truck).$promise.then(() => {
+        //        this.Truck = null;
+        //        this.getTrucks();
+        //    });
+        //}
 
         constructor(private $resource: angular.resource.IResourceService) {
-            this.TruckResource = $resource('/api/trucks/:id');
+            this.TruckResource = $resource('/api/trucks');
             this.getTrucks();
         }
     }
-    
-    
 
 
 }

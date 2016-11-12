@@ -14,6 +14,9 @@ namespace LoadShareWebApp.Data
             : base(options)
         {
         }
+        public DbSet<Truck> Trucks { get; set; }
+        public DbSet<Load> LOads { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

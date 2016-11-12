@@ -24,7 +24,13 @@ namespace LoadShareWebApp {
                 templateUrl: '/ngApp/views/loads.html',
                 controller: LoadShareWebApp.Controllers.LoadController,
                 controllerAs: 'c'
-            });
+            })
+            .state('truckdetails', {
+                url: '/truckdetails',
+                templateUrl: '/ngApp/views/truckdetails.html',
+                controller: LoadShareWebApp.Controllers.TruckDetailController,
+                controllerAs: 'c'
+        })
 
         // Handle request for non-existent route
         $urlRouterProvider.otherwise('/notFound');

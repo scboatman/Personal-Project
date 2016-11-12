@@ -11,50 +11,45 @@ using LoadShareWebApp.Services;
 namespace LoadShareWebApp.Controllers
 {
     [Route("api/[controller]")]
-    public class TrucksController : Controller
+    public class TruckDetailsController : Controller
     {
-        private ITruckService _service;
+        private ITruckDetailService _service;
 
-        
-       
         // GET all trucks
         [HttpGet]
-        public IEnumerable<Truck> Get()
+        public IEnumerable<TruckDetail> Get()
         {
-            return _service.GetAllTrucks();
+            return _service.GetAllTruckDetails();
         }
 
-        // GET a truck by Id
+        // GET a truckDetail by Id
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            return Ok(_service.GetTruckById(id));
+            return Ok(_service.GetTruckDetailById(id));
         }
 
-        //add a truck or update an existing truck
+        //add a truckDetail or update an existing truck
         [HttpPost]
-        public IActionResult Post([FromBody]Truck truck)
+        public IActionResult Post([FromBody]TruckDetail truckDetail)
         {
-            _service.SaveTruck(truck);
-            return Ok(truck);
+            _service.SaveTruckDetail(truckDetail);
+            return Ok(truckDetail);
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
 
-            _service.DeleteTruck(id);
+            _service.DeleteTruckDetail(id);
 
             return Ok();
         }
 
         //constructor utilizing depandency injection
-        public TrucksController(ITruckService service)
+        TruckDetailsController(ITruckDetailService service)
         {
             this._service = service;
         }
-
-
-
     }
 }

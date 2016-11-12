@@ -55,9 +55,11 @@ namespace LoadShareWebApp
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
-            
+            services.AddScoped<IGenericRepository, GenericRepository>();
+            services.AddScoped<ITruckService, TruckService>();
+            services.AddScoped<ITruckDetailService, TruckDetailService>();
+            services.AddScoped<ITruckDetailService, TruckDetailService>();
 
-            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

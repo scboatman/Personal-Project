@@ -4,9 +4,7 @@ namespace LoadShareWebApp.Controllers {
         public message = "Hello from the home page!";
         
     }
-    export class LoadController {
-
-    }
+    
     
   
     

@@ -8,16 +8,18 @@
 <a href="#" class="btn btn-primary">Primary</a>
 <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
 <ul class="dropdown-menu">
-    <li ng-repeat="trucks in c.trucks">{{trucks.origin}} - {{trucks.destination}}</li>
-    <li ng-repeat="trucks in c.trucks">{{trucks.origin}} - {{trucks.destination}}</li>
-    <li><a href="#">Something else here</a></li>
+  
+    <!--<li><a href="#">Something else here</a></li>
     <li class="divider"></li>
-    <li><a href="#">Separated link</a></li>
+    <li><a href="#">Separated link</a></li>-->
 </ul>
 </div>
 
 
-      
+   
+<tr ng-repeat="trucks in c.trucks">
+    <td>{{c.truck.origin}} - {{c.truck.destination}}</td>
+</tr>   
         
 
 

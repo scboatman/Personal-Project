@@ -14,7 +14,9 @@ namespace LoadShareWebApp.Controllers
     {
         static List<Load> _loads = new List<Load>
         {
-            new Load {Id = 1, Age = "8m", Origin = "Tucson", OriginState = "AZ", Destination = "Chicago", DestinationState = "IL", TrailerType = "V", LoadSize = "Full", Length = 53, Weight = 8000, PayRate = 550m, ShipDate = "Nov 10", Company = "WalMart" }
+            new Load {Id = 1, Age = "8m", Origin = "Tucson", OriginState = "AZ", Destination = "Chicago", DestinationState = "IL", TrailerType = "V", LoadSize = "Full", Length = 53, Weight = 8000, PayRate = 550m, ShipDate = "Nov 10", Company = "WalMart" },
+            new Load {Id = 1, Age = "8m", Origin = "PHoenix", OriginState = "AZ", Destination = "Chicago", DestinationState = "IL", TrailerType = "V", LoadSize = "Full", Length = 53, Weight = 8000, PayRate = 550m, ShipDate = "Nov 10", Company = "WalMart" },
+            new Load {Id = 1, Age = "8m", Origin = "Flagstaff", OriginState = "AZ", Destination = "Chicago", DestinationState = "IL", TrailerType = "V", LoadSize = "Full", Length = 53, Weight = 8000, PayRate = 550m, ShipDate = "Nov 10", Company = "WalMart" }
         };
         // GET: api/values
         [HttpGet]
@@ -38,13 +40,13 @@ namespace LoadShareWebApp.Controllers
             }
         }
 
-        // POST api/values
-        [HttpPost]
-        public IActionResult Post([FromBody]Load load)
-        {
-            _loads.Add(load);
-            return Created("/loads/" + load.Id, load);
-        }
+        //// POST api/values
+        //[HttpPost]
+        //public IActionResult Post([FromBody]Load load)
+        //{
+        //    _loads.Add(load);
+        //    return Created("/loads/" + load.Id, load);
+        //}
 
 
 

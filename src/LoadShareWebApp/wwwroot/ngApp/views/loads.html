@@ -2,3 +2,29 @@
 <p>
     {{c.message}}
 </p>
+
+<div class="mdl-card mdl-shadow--4dp">
+    <div class="mdl-card__media">
+        <ul>
+            <!--<li ng-repeat="load in c.loads">{{load.origin}}</li>-->
+            
+        </ul>
+        <img src="http://www.macktrucks.com/~/media/images/trucks/mack_model_series_pinnacle_daycab_lgpromo2_axleback.ashx?as=1&h=248&la=en&w=460" width="200" height="200" border="0"
+             alt="" style="padding:10px;">
+    </div>
+</div>
+ <div>   
+    <div class="mdl-card__supporting-text">
+        The Sky Tower is an observation and telecommunications tower located in Auckland,
+        New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
+        in the Southern Hemisphere.
+    </div>
+</div>
+
+<div>
+
+    <div id="container" />
+
+</div>
+<tr ng-repeat="loads in c.loads">
+    <td>{{c.load.origin}}</td>
