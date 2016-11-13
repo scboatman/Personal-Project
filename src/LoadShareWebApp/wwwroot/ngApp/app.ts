@@ -25,12 +25,21 @@ namespace LoadShareWebApp {
                 controller: LoadShareWebApp.Controllers.LoadController,
                 controllerAs: 'c'
             })
-            .state('truckdetails', {
-                url: '/truckdetails',
-                templateUrl: '/ngApp/views/truckdetails.html',
+            .state('truckDetails', {
+                url: '/truckDetails',
+                templateUrl: '/ngApp/views/truckDetails.html',
                 controller: LoadShareWebApp.Controllers.TruckDetailController,
                 controllerAs: 'c'
-        })
+            })
+            .state('loadDetails', {
+                url: '/loadDetails',
+                templateUrl: '/ngApp/views/loadDetails.html',
+                controller: LoadShareWebApp.Controllers.LoadDetailController,
+                controllerAs: 'c'
+
+            })
+
+
 
         // Handle request for non-existent route
         $urlRouterProvider.otherwise('/notFound');
@@ -39,6 +48,7 @@ namespace LoadShareWebApp {
         $locationProvider.html5Mode(true);
     });
 
-    
+
+
 
 }

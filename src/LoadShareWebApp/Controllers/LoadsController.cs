@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using LoadShareWebApp.Models;
+using LoadShareWebApp.Services;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,54 +13,42 @@ namespace LoadShareWebApp.Controllers
     [Route("api/[controller]")]
     public class LoadsController : Controller
     {
-        static List<Load> _loads = new List<Load>
-        {
-            new Load {Id = 1, Age = "8m", Origin = "Tucson", OriginState = "AZ", Destination = "Chicago", DestinationState = "IL", TrailerType = "V", LoadSize = "Full", Length = 53, Weight = 8000, PayRate = 550m, ShipDate = "Nov 10", Company = "WalMart" },
-            new Load {Id = 1, Age = "8m", Origin = "PHoenix", OriginState = "AZ", Destination = "Chicago", DestinationState = "IL", TrailerType = "V", LoadSize = "Full", Length = 53, Weight = 8000, PayRate = 550m, ShipDate = "Nov 10", Company = "WalMart" },
-            new Load {Id = 1, Age = "8m", Origin = "Flagstaff", OriginState = "AZ", Destination = "Chicago", DestinationState = "IL", TrailerType = "V", LoadSize = "Full", Length = 53, Weight = 8000, PayRate = 550m, ShipDate = "Nov 10", Company = "WalMart" }
-        };
+        private ILoadService _service;
+
+        
         // GET: api/values
         [HttpGet]
         public IEnumerable<Load> Get()
         {
-            return _loads;
+            return _service.GetAllLoads();
         }
 
-        // GET api/values/5
+        // GET a load by id
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            Load load = _loads.Find(p => p.Id == id);
-            if (load == null)
-            {
-                return NotFound();
-            }
-            else
-            {
-                return Ok(load);
-            }
+            return Ok(_service.GetLoadById(id));
         }
 
-        //// POST api/values
-        //[HttpPost]
-        //public IActionResult Post([FromBody]Load load)
-        //{
-        //    _loads.Add(load);
-        //    return Created("/loads/" + load.Id, load);
-        //}
+        [HttpPost]
+        public IActionResult Post([FromBody]Load load)
+        {
+            _service.SaveLoad(load);
+            return Ok(load);
+        }
 
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            _service.DeleteLoad(id);
+            return Ok();
+        }
 
+        public LoadsController(ILoadService service)
+        {
+            this._service = service;
+        }
 
-        //// PUT api/values/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
-
-        //// DELETE api/values/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
+      
     }
 }

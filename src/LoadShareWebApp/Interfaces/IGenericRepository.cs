@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace LoadShareWebApp
+namespace LoadShareWebApp.REPO
 {
     public interface IGenericRepository
     {

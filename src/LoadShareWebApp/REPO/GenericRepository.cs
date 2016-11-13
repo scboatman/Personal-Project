@@ -5,11 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LoadShareWebApp
+namespace LoadShareWebApp.REPO
 {
     public class GenericRepository :IGenericRepository
     {
         private ApplicationDbContext _db;
+
+        public GenericRepository(ApplicationDbContext db)
+        {
+            this._db = db;
+        }
 
         //Goes and gets a table of the class and makes it queriable
         public IQueryable<T> Query<T>() where T : class// "T" must be a class
@@ -53,9 +58,6 @@ namespace LoadShareWebApp
             _db.Dispose();
         }
 
-        public GenericRepository(ApplicationDbContext db)
-        {
-            this._db = db;
-        }
+       
     }
 }

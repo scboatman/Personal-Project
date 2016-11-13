@@ -14,7 +14,7 @@ using System.IO;
 using LoadShareWebApp.Data;
 using LoadShareWebApp.Models;
 using LoadShareWebApp.Services;
-
+using LoadShareWebApp.REPO;
 
 namespace LoadShareWebApp
 {
@@ -58,7 +58,8 @@ namespace LoadShareWebApp
             services.AddScoped<IGenericRepository, GenericRepository>();
             services.AddScoped<ITruckService, TruckService>();
             services.AddScoped<ITruckDetailService, TruckDetailService>();
-            services.AddScoped<ITruckDetailService, TruckDetailService>();
+            services.AddScoped<ILoadDetailService, LoadDetailService>();
+            services.AddScoped<ILoadService, LoadService>();
 
         }
 

@@ -5,11 +5,11 @@
    
     <title>LoadShareWebApp</title>
 
-    @*<link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />*@
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cyborg/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cyborg/bootstrap.min.css">*@
     
     @*<link rel="stylesheet" href="/bower_components/material-design-lite/material.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">*@
@@ -17,6 +17,7 @@
     <base href="/" />
 </head>
 <body>
+    
     @*<link href="~/ngApp/views/StyleSheet.css" rel="stylesheet" />*@
     
     @*<div id="banner">
@@ -28,23 +29,18 @@
 
 
         <div>
-            <!-- Accent-colored raised button with ripple -->
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                <a href="/">Home</a>
-            </button>|
-
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                <a href="/trucks">Trucks</a>
-            </button>|
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                <a href="/loads">Loads</a>
-            </button>
-
-        </div>
+            
+            <a href="/">Home</a>|
+            <a href="/trucks">Trucks</a>|
+            <a href="/loads">Loads</a>
 
         <hr />
-
         <ui-view></ui-view>
+
+        </div>
+    
+    
+       
 
 
         <!-- Library Files -->
@@ -65,15 +61,15 @@
     <script src="~/lib/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="~/lib/angular-animate/angular-animate.js"></script>
 
-
+   
     <script src="~/lib/angular-material/angular-material.js"></script>
     <script src="~/lib/angular-aria/angular-aria.js"></script>
     <script src="~/lib/angular-messages/angular-messages.js"></script>
         <script src="/ngapp/app.js"></script>
         <script src="/ngapp/controllers/controllers.js"></script>
         <script src="/ngapp/services/services.js"></script>
-        <script src="~/ngApp/controllers/TrucksController.js"></script>
-        <script src="~/ngApp/controllers/LoadsController.js"></script>
+        @*<script src="~/ngApp/controllers/TrucksController.js"></script>
+        <script src="~/ngApp/controllers/LoadsController.js"></script>*@
         
         <script src="/bower_components/material-design-lite/material.min.js"></script>
 </body>

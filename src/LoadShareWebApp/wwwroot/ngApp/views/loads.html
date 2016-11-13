@@ -1,30 +1,54 @@
 <h1>Loads</h1>
-<p>
-    {{c.message}}
-</p>
 
-<div class="mdl-card mdl-shadow--4dp">
-    <div class="mdl-card__media">
-        <ul>
-            <!--<li ng-repeat="load in c.loads">{{load.origin}}</li>-->
-            
-        </ul>
-        <img src="http://www.macktrucks.com/~/media/images/trucks/mack_model_series_pinnacle_daycab_lgpromo2_axleback.ashx?as=1&h=248&la=en&w=460" width="200" height="200" border="0"
-             alt="" style="padding:10px;">
-    </div>
-</div>
- <div>   
-    <div class="mdl-card__supporting-text">
-        The Sky Tower is an observation and telecommunications tower located in Auckland,
-        New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
-        in the Southern Hemisphere.
-    </div>
-</div>
 
-<div>
+<table class="table table-bordered table-striped">
+    <thread>
+        <tr>
+            <th>Age</th>
+            <th>Miles</th>
+            <th>Origin</th>
+            <th>State</th>
+            <th>Destination</th>
+            <th>State</th>
+            <th>Trailer</th>
+            <th>Load Size</th>
+            <th>Length</th>
+            <th>Weight</th>
+            <th>Pay Rate</th>
+            <th>Ship Date</th>
+            <th>Company</th>
+            <th>Make a Selection</th>
+            <!--<th>Action</th>-->
 
-    <div id="container" />
+        </tr>
+    </thread>
 
-</div>
-<tr ng-repeat="loads in c.loads">
-    <td>{{c.load.origin}}</td>
+
+    <tbody>
+        <tr ng-repeat="load in c.loads">
+            <td>{{load.age}}</td>
+            <td>{{load.miles}}</td>
+            <td>{{load.origin}}</td>
+            <td>{{load.originState}}</td>
+            <td>{{load.destination}}</td>
+            <td>{{load.destinationState}}</td>
+            <td>{{load.trailerType}}</td>
+            <td>{{load.loadSize}}</td>
+            <td>{{load.length}}</td>
+            <td>{{load.weight}}</td>
+            <td>{{load.payRate}}</td>
+            <td>{{load.shipDate}}</td>
+            <td>{{load.company}}</td>
+            <td><a ng-href="/loadkDetails/{{load.id}}" class="btn btn-success">Select</a></td>
+            <!--<td><a ng-href="/deleteMovie/{{movie.id}}" class="btn btn-primary">Delete</a></td>-->
+        </tr>
+    </tbody>
+</table>
+<h1>Would You Like To Add A Truck For Shippers to See?</h1>
+<a ui-sref="loadDetails" class="btn btn-primary">
+    Add Truck
+</a>
+
+
+
+

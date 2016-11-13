@@ -3,51 +3,54 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using LoadShareWebApp.Models;
 using LoadShareWebApp.Services;
+using LoadShareWebApp.Models;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace LoadShareWebApp.Controllers
 {
     [Route("api/[controller]")]
-    public class TruckDetailsController : Controller
+    public class LoadDetailsController : Controller
     {
-        private ITruckDetailService _service;
+        private ILoadDetailService _service;
 
         // GET all trucks
         [HttpGet]
-        public IEnumerable<TruckDetail> Get()
+        public IEnumerable<LoadDetail> Get()
         {
-            return _service.GetAllTruckDetails();
+            return _service.GetAllLoadDetails();
         }
 
-        // GET a truckDetail by Id
+        // GET a loadDetail by Id
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            return Ok(_service.GetTruckDetailById(id));
+            return Ok(_service.GetLoadDetailById(id));
         }
 
-        //add a truckDetail or update an existing truckDetail
+        //add a loadDetail or update an existing load
         [HttpPost]
-        public IActionResult Post([FromBody]TruckDetail truckDetail)
+        public IActionResult Post([FromBody]LoadDetail LoadDetail)
         {
-            _service.SaveTruckDetail(truckDetail);
-            return Ok(truckDetail);
+            LoadDetail loadDetail = null;
+            _service.SaveLoadDetail(loadDetail);
+            return Ok(loadDetail);
         }
+
+     
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
 
-            _service.DeleteTruckDetail(id);
+            _service.DeleteLoadDetail(id);
 
             return Ok();
         }
 
         //constructor utilizing depandency injection
-        TruckDetailsController(ITruckDetailService service)
+        LoadDetailsController(ILoadDetailService service)
         {
             this._service = service;
         }

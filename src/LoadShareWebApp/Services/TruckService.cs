@@ -1,4 +1,5 @@
 ﻿using LoadShareWebApp.Models;
+using LoadShareWebApp.REPO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,7 @@ namespace LoadShareWebApp.Services
     public class TruckService : ITruckService
     {
         private IGenericRepository _repo;
-
-        public TruckService(IGenericRepository repo)
-        {
-            _repo = repo;
-        }
+              
 
 
         //Get all trucks (called by controller Get() method)
@@ -67,8 +64,12 @@ namespace LoadShareWebApp.Services
         //{
         //    throw new NotImplementedException();
         //}
+        public TruckService(IGenericRepository repo)
+        {
+            _repo = repo;
+        }
 
-        
+
 
 
     }
