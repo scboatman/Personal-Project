@@ -89,14 +89,14 @@ namespace LoadShareWebApp.Controllers {
         public save() {
             this.LoadResource.save(this.load).$promise.then(() => {
                 this.load = null;
-                this.$state.go(`truckDetails`);
+                this.$state.go(`loads`);
             });
         }
         //Post the load after making changes
         public saveLoad() {
             this.LoadResource.save(this.load).$promise.then(() => {
                 this.load = null;
-                this.$state.go(`truckDetails`);
+                this.$state.go(`loads`);
             })
         }
 
@@ -106,24 +106,24 @@ namespace LoadShareWebApp.Controllers {
     }
     export class AddTruckController {
         public truck;
-        public LoadResource;
+        public TruckResource;              
 
         public save() {
-            this.LoadResource.save(this.truck).$promise.then(() => {
+            this.TruckResource.save(this.truck).$promise.then(() => {
                 this.truck = null;
-                this.$state.go(`loadDetails`);
+                this.$state.go(`trucks`);
             });
         }
-        //Post the load after making changes
+        //Post the truck after making changes
         public saveTruck() {
-            this.LoadResource.save(this.truck).$promise.then(() => {
+            this.TruckResource.save(this.truck).$promise.then(() => {
                 this.truck = null;
-                this.$state.go(`loadDetails`);
+                this.$state.go(`trucks`);
             })
         }
 
         constructor(private $resource: angular.resource.IResourceService, private $state: ng.ui.IStateService) {
-            this.LoadResource = $resource('/api/loadDetails');
+            this.TruckResource = $resource('/api/trucks');
         }
     }
 
